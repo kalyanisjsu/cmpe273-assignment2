@@ -41,7 +41,7 @@ public class LibraryService extends Service<LibraryServiceConfiguration> {
 	public static String libraryName;
 	public String destination;
 	public String topicB = "/topic/61070.book.computer";
-	public String topicA = "/topic/61070.book.all";
+	public String topicA = "/topic/61070.book.*";
 	public Book book=null;
 	public URL url=null;
 	Status status = Status.available;
@@ -85,16 +85,15 @@ public class LibraryService extends Service<LibraryServiceConfiguration> {
 				String password =apolloPassword;
 				String host = apolloHost;
 				int port = apolloPort;
-
-
+				
 				if(libraryName.equalsIgnoreCase("library-a"))
 				{
-					System.out.println("Library Name :: " + libraryName );
+					System.out.println("Library Name :: " + libraryName + "" + topicName );
 					destination = arg(0,topicA);
 				}
 				else if(libraryName.equalsIgnoreCase("library-b"))
 				{
-					System.out.println("Library Name :: " + libraryName );
+					System.out.println("Library Name :: " + libraryName + " " + topicName);
 					destination = arg(0,topicB);
 				}
 

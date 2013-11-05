@@ -16,9 +16,11 @@ public class HomeResource {
     public HomeResource(BookRepositoryInterface bookRepository) {
 	this.bookRepository = bookRepository;
     }
-
+    
     @GET
     public HomeView getHome() {
-	return new HomeView(bookRepository.getBookByISBN(1L));
+
+        return new HomeView(bookRepository.getAllBooks());
+
     }
 }

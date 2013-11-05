@@ -42,7 +42,7 @@ public class ProcurementResource implements Job {
 	ClientResponse response;
 	String queue = ProcurementService.queueName;
 	String topicB = "/topic/61070.book.computer";
-	String topicA = "/topic/61070.book.all";
+	String topicA = "/topic/61070.book.";
 	Message msg =null;
 	JSONArray jsonArray=null;
 	Session session = null;
@@ -175,6 +175,7 @@ public class ProcurementResource implements Job {
 				else
 				{
 					System.out.println("Sending Lib A topic");
+					topicA+=category;
 					String MsgBookA =  jsonArray.getJSONObject(i).getString("isbn") + ":" + "\"" 
 							+ jsonArray.getJSONObject(i).getString("title") + "\"" + ":"+"\"" + category + "\""+":" 
 							+"\""+ jsonArray.getJSONObject(i).getString("coverimage")+ "\"" ;
@@ -220,6 +221,7 @@ public class ProcurementResource implements Job {
 		String password = ProcurementService.apolloPassword;
 		String host = ProcurementService.apolloHost;
 		int port = ProcurementService.apolloPort;
+		System.out.println("Topic name send to:" + topicA);
 		String destination = arg(0, topicA);
 		StompJmsConnectionFactory factory = new StompJmsConnectionFactory();
 		factory.setBrokerURI("tcp://" + host + ":" + port);

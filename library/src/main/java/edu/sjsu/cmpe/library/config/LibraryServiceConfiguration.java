@@ -13,7 +13,6 @@ public class LibraryServiceConfiguration extends Configuration {
     @NotEmpty
     @JsonProperty
     private String stompTopicName;
-    
     private String apolloUser;
     private String	apolloPassword;
     private int	apolloPort;
