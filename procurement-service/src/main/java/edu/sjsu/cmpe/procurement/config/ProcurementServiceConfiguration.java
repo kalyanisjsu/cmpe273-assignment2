@@ -1,5 +1,8 @@
 package edu.sjsu.cmpe.procurement.config;
 
+import javax.validation.Valid;
+import javax.validation.constraints.NotNull;
+
 import org.hibernate.validator.constraints.NotEmpty;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -11,10 +14,49 @@ public class ProcurementServiceConfiguration extends Configuration {
     private String stompQueueName;
 
     @NotEmpty
-    @JsonProperty
+    @JsonProperty 
     private String stompTopicName;
 
-    /**
+    private String apolloUser;
+    private String	apolloPassword;
+    private String	apolloHost;
+    private int	apolloPort;
+
+    
+    
+    public String getApolloUser() {
+		return apolloUser;
+	}
+
+	public void setApolloUser(String apolloUser) {
+		this.apolloUser = apolloUser;
+	}
+
+	public String getApolloPassword() {
+		return apolloPassword;
+	}
+
+	public void setApolloPassword(String apolloPassword) {
+		this.apolloPassword = apolloPassword;
+	}
+
+	public String getApolloHost() {
+		return apolloHost;
+	}
+
+	public void setApolloHost(String apolloHost) {
+		this.apolloHost = apolloHost;
+	}
+
+	public int getApolloPort() {
+		return apolloPort;
+	}
+
+	public void setApolloPort(int apolloPort) {
+		this.apolloPort = apolloPort;
+	}
+
+	/**
      * @return the stompQueueName
      */
     public String getStompQueueName() {

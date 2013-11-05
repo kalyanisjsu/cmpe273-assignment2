@@ -2,14 +2,14 @@ package edu.sjsu.cmpe.library.domain;
 
 import java.net.URL;
 
+
 import javax.validation.constraints.NotNull;
 
 import org.hibernate.validator.constraints.NotEmpty;
 
 public class Book {
 
-    public enum Status {
-	available("available"), checkedout("checkedout"), lost("lost");
+    public enum Status {available("available"), checkedout("checkedout"), lost("lost");
 
 	private String value;
 
@@ -125,6 +125,7 @@ public class Book {
      *            the status to set
      */
     public void setStatus(Status status) {
+    	//System.out.println("Status :: " + status);
 	this.status = status;
     }
 
