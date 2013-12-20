@@ -50,7 +50,7 @@ public class ProcurementService extends Service<ProcurementServiceConfiguration>
 
 		apolloUser = env("APOLLO_USER", "admin");
 		apolloPassword = env("APOLLO_PASSWORD", "password");
-		apolloHost = env("APOLLO_HOST", "54.215.210.214");
+		apolloHost = env("APOLLO_HOST", "54.219.156.168");
 		apolloPort = Integer.parseInt(env("APOLLO_PORT", "61613"));
 		queueName = configuration.getStompQueueName();
 		
