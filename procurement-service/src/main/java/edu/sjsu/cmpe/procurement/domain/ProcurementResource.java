@@ -118,7 +118,7 @@ public class ProcurementResource implements Job {
 		try 
 		{
 			Client client = Client.create();
-			WebResource webResource = client.resource("http://54.215.210.214:9000/orders");
+			WebResource webResource = client.resource("http://54.219.156.168:9000/orders");
 			for (int i = 0; i < booksInQueue.size(); i++) {
 
 				int bookISBN = Integer.parseInt(booksInQueue.get(i));
@@ -147,7 +147,7 @@ public class ProcurementResource implements Job {
 		try {
 
 			Client client = Client.create();
-			WebResource webResource = client.resource("http://54.215.210.214:9000/orders/61070");
+			WebResource webResource = client.resource("http://54.219.156.168:9000/orders/61070");
 			ClientResponse response = webResource.accept("application/json").get(ClientResponse.class);
 			if (response.getStatus() != 200) {
 				throw new RuntimeException("Failed : HTTP error code : " + response.getStatus());
